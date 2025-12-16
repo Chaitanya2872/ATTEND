@@ -741,6 +741,9 @@ app.get("/api/report/week", async (req, res) => {
 /* =======================
    SERVER START
 ======================= */
-app.listen(5000, () => {
-    console.log("🚀 Server running on http://localhost:5000");
-});
+(async () => {
+    await runMigration();
+    app.listen(5000, () => {
+        console.log("🚀 Server running on http://localhost:5000");
+    });
+})();
