@@ -3,6 +3,8 @@ const sql = require("mssql");
 const cors = require("cors");
 const PDFDocument = require("pdfkit");
 const moment = require("moment");
+require("dotenv").config(); // 👈 MUST be first
+
 
 
 const app = express();
