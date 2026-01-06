@@ -3,7 +3,6 @@ const sql = require("mssql");
 const cors = require("cors");
 const PDFDocument = require("pdfkit");
 const moment = require("moment");
-require("dotenv").config(); // 👈 MUST be first
 
 
 
@@ -14,13 +13,14 @@ app.use(cors());
    SQL Server Config
 ======================= */
 const config = {
-    user: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    server: process.env.DB_HOST,
-    database: process.env.DB_NAME,
+    user: "zk",
+    password: "admin@123",
+    server: "192.168.101.165",
+    database: "geonetp",
+    port: 1433,
     options: {
-        encrypt: false,
-        trustServerCertificate: true
+        encrypt: false,              // SQL Server without SSL
+        trustServerCertificate: true // Required for local / self-signed certs
     },
     connectionTimeout: 450000,
     requestTimeout: 450000
